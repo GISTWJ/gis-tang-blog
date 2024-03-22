@@ -1,3 +1,8 @@
+---
+category:
+  - 杂谈
+  - Cesium
+---
 # Cesium中的removeAll
 
 在Cesium中，清除实体Entity的方法主要是在`Cesium.viewer.entities`实体集合中调用`remove()`、`removeById(id)`或`removeAll()`

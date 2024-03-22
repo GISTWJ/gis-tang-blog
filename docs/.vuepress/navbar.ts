@@ -18,4 +18,12 @@ export default navbar([
     ],
   },
   "/demo/",
+  {
+    text:"项目演示",
+    icon:"laptop-code",
+    prefix:"/project/",
+    children:[
+      // {text:"Three",icon: "pen-to-square",link}
+    ]
+  },
 ]);

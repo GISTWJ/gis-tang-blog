@@ -1,7 +1,7 @@
 ---
 title: 代码案例
 index: false
-icon: laptop-code
+icon: code
 category:
   - 代码案例
 ---

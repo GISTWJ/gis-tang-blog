@@ -6,7 +6,7 @@ export default sidebar({
     {
       text: "学习笔记",
       icon: "book",
-      prefix: "posts/",
+      prefix: "studyNotes/",
       children: "structure",
     },
     "intro",
