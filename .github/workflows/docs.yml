@@ -1,31 +1,37 @@
-name: docs
+
+name: Deploy Docs
 
 on:
-  # 每当 push 到 main 分支时触发部署
   push:
-    branches: [master]
-  # 手动触发部署
-  workflow_dispatch:
+    branches:
+      # make sure this is the branch you are using
+      - master
+
+permissions:
+  contents: write
 
 jobs:
-  docs:
+  deploy-gh-pages:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
-          # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
           fetch-depth: 0
+          # if your docs needs submodules, uncomment the following line
+          # submodules: true
+
+
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          # 选择要使用的 node 版本
           node-version: 21.0.0
-          # 缓存 npm 依赖
           cache: npm
 
-      # 运行构建脚本
+      - name: Install Deps
+        run: npm ci
+
       - name: Build Docs
         env:
           NODE_OPTIONS: --max_old_space_size=8192
@@ -33,15 +39,9 @@ jobs:
           npm run docs:build
           > docs/.vuepress/dist/.nojekyll
 
-      # 查看 workflow 的文档来获取更多信息
-      # @see https://github.com/crazy-max/ghaction-github-pages
-      - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v4
+      - name: Deploy Docs
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # 部署到 gh-pages 分支
-          target_branch: gh-pages
-          # 部署目录为 VuePress 的默认输出目录
-          build_dir: docs/.vuepress/dist
-        env:
-          # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # This is the branch where the docs are deployed to
+          branch: gh-pages
+          folder: docs/.vuepress/dist
