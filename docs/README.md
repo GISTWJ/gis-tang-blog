@@ -2,47 +2,26 @@
 home: true
 layout: BlogHome
 icon: home
-title: Blog Home
+title: 主页
 heroImage: https://theme-hope-assets.vuejs.press/logo.svg
-heroText: The name of your blog
-tagline: You can put your slogan here
+heroText: 歪脖祭司
 heroFullScreen: true
+tagline:  事上练，破犹豫之贼
 projects:
   - icon: project
-    name: project name
-    desc: project detailed description
-    link: https://your.project.link
-
-  - icon: link
-    name: link name
-    desc: link detailed description
-    link: https://link.address
-
-  - icon: book
-    name: book name
-    desc: Detailed description of the book
-    link: https://link.to.your.book
+    name: 项目名称
+    desc: 项目详细描述
+    link: https://你的项目链接
 
   - icon: article
-    name: article name
-    desc: Detailed description of the article
-    link: https://link.to.your.article
-
-  - icon: friend
-    name: friend name
-    desc: Detailed description of friend
-    link: https://link.to.your.friend
+    name: 文章名称
+    desc: 文章详细描述
+    link: https://你的文章链接
 
   - icon: https://theme-hope-assets.vuejs.press/logo.svg
-    name: custom item
-    desc: Detailed description of this custom item
-    link: https://link.to.your.friend
+    name: 自定义项目
+    desc: 自定义详细介绍
+    link: https://你的自定义链接
 
-footer: customize your footer text
+footer: 已经到底了
 ---
-
-This is a blog home page demo.
-
-To use this layout, you should set both `layout: BlogHome` and `home: true` in the page front matter.
-
-For related configuration docs, please see [blog homepage](https://theme-hope.vuejs.press/guide/blog/home/).

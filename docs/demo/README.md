@@ -1,9 +1,9 @@
 ---
-title: Features demo
+title: 代码案例
 index: false
 icon: laptop-code
 category:
-  - Guide
+  - 代码案例
 ---
 
 <Catalog />
