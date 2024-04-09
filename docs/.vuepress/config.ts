@@ -10,8 +10,3 @@ export default defineUserConfig({
 
   theme,
 });
-module.exports = {
-  plugins: [
-    'vuepress-plugin-mini-sandbox'
-  ]
-}
